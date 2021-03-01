@@ -1,5 +1,7 @@
 # Node Back-End - Build Week - tt_wbft_20 - Jennifer Kramer
 
+-----TESTING - DO NOT USE YET------
+
 **[Endpoints]** Base URL: http://ttwebft20-use-my-tech-stuff.herokuapp.com/api
 - This url will be the beginning of all endpoints. Add the following endpoints below to the base URL.
 
