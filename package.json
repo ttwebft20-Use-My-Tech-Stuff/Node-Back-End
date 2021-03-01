@@ -1,0 +1,39 @@
+{
+  "name": "node-back-end",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "mlatest": "knex migrate:latest",
+    "mrollback": "knex migrate:rollback",
+    "rseed": "knex seed:run",
+    "server": "nodemon",
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ttwebft20-Use-My-Tech-Stuff/Node-Back-End.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ttwebft20-Use-My-Tech-Stuff/Node-Back-End/issues"
+  },
+  "homepage": "https://github.com/ttwebft20-Use-My-Tech-Stuff/Node-Back-End#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "helmet": "^4.4.1",
+    "jsonwebtoken": "^8.5.1",
+    "knex": "^0.21.18",
+    "pg": "^8.5.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.21.0",
+    "nodemon": "^2.0.7"
+  }
+}
