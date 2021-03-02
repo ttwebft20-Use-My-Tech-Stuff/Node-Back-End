@@ -31,8 +31,8 @@
         "username" - string, MUST match a registered username </br>
         "password" - string, MUST match a registered password with registered username </br>
 
-## [Rentable-Items]
-- Example: https://anywhere-fitness-tt42.herokuapp.com/api/rentable-items
+## [rentable_items]
+- Example: https://anywhere-fitness-tt42.herokuapp.com/api/rentable_items
 - Token required to view owners with rentable items.
 
 

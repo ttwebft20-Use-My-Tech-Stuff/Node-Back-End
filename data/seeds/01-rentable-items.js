@@ -1,8 +1,8 @@
 
 exports.seed = function(knex) {
-  return knex("rentable-items").del()
+  return knex("rentable_items").del()
     .then(function () {
-      return knex("rentable-items").insert([
+      return knex("rentable_items").insert([
         {
           item_name: "Kodak PixPro Astro Zoom Digital Camera (AZ421)",
           category: "camera",

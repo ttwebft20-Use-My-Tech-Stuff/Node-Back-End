@@ -9,10 +9,10 @@
     "latest": "knex migrate:latest",
     "rollback": "knex migrate:rollback",
     "seed": "knex seed:run",
-    "migrateh": "heroku run knex migrate:latest -a ttwebft20-Use-My-Tech-Stuff",
-    "rollbackh": "heroku run knex migrate:rollback -a ttwebft20-Use-My-Tech-Stuff",
-    "seedh": "heroku run knex seed:run -a ttwebft20-Use-My-Tech-Stuff",
-    "databaseh": "heroku pg:psql -a ttwebft20-Use-My-Tech-Stuff",
+    "migrateh": "heroku run knex migrate:latest -a ttwebft20-use-my-tech-stuff",
+    "rollbackh": "heroku run knex migrate:rollback -a ttwebft20-use-my-tech-stuff",
+    "seedh": "heroku run knex seed:run -a ttwebft20-use-my-tech-stuff",
+    "databaseh": "heroku pg:psql -a ttwebft20-use-my-tech-stuff",
     "test": "cross-env NODE_ENV=testing jest --watchAll --verbose --runInBand"
   },
   "repository": {
