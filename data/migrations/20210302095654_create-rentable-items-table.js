@@ -8,7 +8,7 @@ exports.up = function(knex) {
             .notNullable();
         table.string("description", 500)
             .notNullable();
-        table.boolean("rentable")
+        table.boolean("rented")
             .notNullable();
         table.integer("price")
             .notNullable();
