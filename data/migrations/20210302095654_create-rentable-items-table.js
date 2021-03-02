@@ -1,14 +1,14 @@
 
 exports.up = function(knex) {
     return knex.schema.createTable("rentable_items", table => {
-        table.increments();
+        table.increments("rentable_items_id");
         table.string("item_name", 128)
             .notNullable();
         table.string("category")
             .notNullable();
         table.string("description", 500)
             .notNullable();
-        table.boolean("rentable")
+        table.boolean("rented")
             .notNullable();
         table.integer("price")
             .notNullable();

@@ -16,7 +16,9 @@ async function validateItemId(req, res, next) {
         if (validateIdMatch) {
             next();
         } else {
-            res.status(400).json(`The class with ID: ${id} could not be found.`);
+            res.status(400).json({
+                message: `The rentable item with ID: ${id} could not be found.`
+            });
         }
     } catch(error) {
         next(error);
@@ -24,14 +26,14 @@ async function validateItemId(req, res, next) {
 }
 
 function validateItem(req, res, next) {
-    const { item_name, category, description, rentable, price, owner_username } = req.body;
+    const { item_name, category, description, rented, price, owner_username } = req.body;
 
     if (item_name && category && description
-        && rentable && price && owner_username) {
+        && rented && price && owner_username) {
         next();
     } else {
         res.status(400).json({
-            message: "Missing: item_name, category, description, rentable, price, and owner_username."
+            message: "Missing: item_name, category, description, rented, price, and owner_username."
         });
     }
 }
