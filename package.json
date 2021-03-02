@@ -12,6 +12,7 @@
     "migrateh": "heroku run knex migrate:latest -a ttwebft20-Use-My-Tech-Stuff",
     "rollbackh": "heroku run knex migrate:rollback -a ttwebft20-Use-My-Tech-Stuff",
     "seedh": "heroku run knex seed:run -a ttwebft20-Use-My-Tech-Stuff",
+    "databaseh": "heroku pg:psql -a ttwebft20-Use-My-Tech-Stuff",
     "test": "cross-env NODE_ENV=testing jest --watchAll --verbose --runInBand"
   },
   "repository": {

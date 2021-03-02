@@ -1,4 +1,5 @@
 const pg = require('pg');
+require("dotenv").config();
 
 // eslint-disable-next-line no-undef
 if (process.env.DATABASE_URL) {
@@ -7,8 +8,8 @@ if (process.env.DATABASE_URL) {
 
 const sharedConfig = {
   client: 'pg',
-  migrations: { directory: './api/data/migrations' },
-  seeds: { directory: './api/data/seeds' },
+  migrations: { directory: './data/migrations' },
+  seeds: { directory: './data/seeds' },
 };
 
 module.exports = {
