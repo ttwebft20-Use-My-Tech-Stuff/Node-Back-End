@@ -29,9 +29,25 @@
         **Fields Required:** </br>
         "username" - string, MUST match a registered username </br>
         "password" - string, MUST match a registered password with registered username </br>
-        
+
+## [Users]
+- Token required for seeing users.
+- Example: http://ttwebft20-use-my-tech-stuff.herokuapp.com/api/users
+
+    * **[GET] [FindAllUsers]** - Finds all users (owners and renters) </br>
+        Endpoint: **/users**
+
+    * **[GET] [FindUserById]** - Find a registered user by user id </br>
+        Endpoint: **/users/:id**
+
 -----TESTING - DO NOT USE YET------
 
 ## [Rentable Items]
 - Token required to view rentable items.
-- Example: 
+- Example: http://ttwebft20-use-my-tech-stuff.herokuapp.com/api/rentable_items
+
+    * **[GET] [FindAllRentableItems]** - Find all rentable items.
+        Endpoint: **/rentable_items**
+    
+    * **[GET] [FindItemById]** - Find rentable item by ID.
+        Endpoint: **/rentable_items/:id**
