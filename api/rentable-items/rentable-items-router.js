@@ -8,6 +8,7 @@ const { validateItemId, validateItem, validateOwnerUsername } = require("./renta
 router.get("/", async (req, res, next) => {
     try {
         const data = await RentableItems.find();
+
         return res.status(200).json(data);
     } catch(error) {
         next(error);
@@ -29,6 +30,7 @@ router.get("/:id", validateItemId, async (req, res, next) => {
 router.post("/", validateItem, validateOwnerUsername, async (req, res, next) => {
     try {
         const data = await RentableItems.add(req.body);
+
         return res.status(201).json(data);
     } catch(error) {
         next(error);
@@ -36,6 +38,15 @@ router.post("/", validateItem, validateOwnerUsername, async (req, res, next) => 
 });
 
 // PUT - Update a rentable item by ID
+router.put("/:id", validateItemId, validateItem, async (req, res, next) => {
+    try {
+        const data = await RentableItems.update(req.body, req.params.id);
+
+        return res.status(200).json(data);
+    } catch(error) {
+        next(error);
+    }
+});
 
 
 // DELETE - Delete a rentable item by ID
