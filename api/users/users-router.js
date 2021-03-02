@@ -4,12 +4,12 @@ const Users = require("./users-model.js");
 
 router.get("/", async (req, res, next) => {
     try {
-        const data = await Users.find()
+        const data = await Users.find();
         return res.status(200).json(data);
     } catch (error) {
         next(error);
     }
-})
+});
 
 router.get("/:id", async (req, res, next) => {
     const { id } = req.params;
@@ -25,6 +25,6 @@ router.get("/:id", async (req, res, next) => {
     } catch(error) {
         next(error);
     }
-})
+});
 
 module.exports = router;

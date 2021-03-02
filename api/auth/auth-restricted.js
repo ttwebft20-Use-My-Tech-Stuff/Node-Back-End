@@ -1,6 +1,7 @@
 require("dotenv").config();
 const jwt = require("jsonwebtoken");
-const jwtSecret = process.env.JWT_SECRET
+// eslint-disable-next-line no-undef
+const jwtSecret = process.env.JWT_SECRET;
 
 module.exports = (req, res, next) => {
     const token = req.headers.authorization;
@@ -16,8 +17,8 @@ module.exports = (req, res, next) => {
             req.decodedJwt = decoded;
             next();
         }
-        })
+        });
     } else {
         res.status(400).json("Token required.");
-    };
+    }
 };

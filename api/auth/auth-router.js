@@ -1,8 +1,5 @@
-const bcryptjs = require("bcryptjs");
-const jwt = require("jsonwebtoken");
-
 const router = require("express").Router();
-const db = require("../../data/db-config.js");
+const bcryptjs = require("bcryptjs");
 
 const { isValidRegister, isValidLogin, makeToken } = require("./auth-middleware.js");
 
@@ -49,7 +46,7 @@ router.post("/login", async (req, res, next) => {
             const user = await Users.findBy({ username });
 
             if (user && bcryptjs.compareSync(password, user.password)) {
-                const token = makeToken(user)
+                const token = makeToken(user);
 
                 return res.status(200).json({
                     message: `Welcome, ${username}`,

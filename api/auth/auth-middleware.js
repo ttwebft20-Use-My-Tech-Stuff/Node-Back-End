@@ -1,5 +1,6 @@
 const jwt = require("jsonwebtoken");
-const jwtSecret = process.env.JWT_SECRET
+// eslint-disable-next-line no-undef
+const jwtSecret = process.env.JWT_SECRET;
 
 require("dotenv").config();
 
@@ -18,23 +19,23 @@ function isValidRegister(user) {
         && user.password
         && user.role
     );
-};
+}
 
 function isValidLogin(user) {
     return Boolean(
         user.username
         && user.password
     );
-};
+}
 
 function makeToken(user) {
     const payload = {
         subject: user.user_id,
         username: user.username,
         role: user.role
-    }
+    };
     const options = {
         expiresIn: "900s"
-    }
+    };
     return jwt.sign(payload, jwtSecret, options);
-};
+}
