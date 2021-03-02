@@ -15,6 +15,7 @@
         "first_name" - string </br>
         "last_name" - string </br>
         "email" - string </br>
+        "zipcode" - string </br>
         "password" - string </br>
         "role" - string, either MUST be "owner" or "renter"
 

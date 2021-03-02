@@ -32,7 +32,7 @@ router.post("/register", async (req, res, next) => {
             next(error);
         }
     } else {
-        res.status(400).json("Username, first_name, last_name, email, password, and role are required.");
+        res.status(400).json("Username, first_name, last_name, email, zipcode, password, and role are required.");
     }
 });
 
