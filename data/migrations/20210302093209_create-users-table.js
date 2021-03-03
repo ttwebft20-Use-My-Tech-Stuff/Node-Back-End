@@ -12,7 +12,7 @@ exports.up = function(knex) {
         table.string("email", 128)
             .notNullable()
             .unique();
-        table.integer("zipcode", 10)
+        table.integer("zipcode", 5)
             .notNullable();
         table.string("password")
             .notNullable();

@@ -1,13 +1,13 @@
 const router = require("express").Router();
 
-const techItems = require("./tech-items-model.js");
+const TechItems = require("./tech-items-model.js");
 
 const { validateItemId, validateItem, validateOwnerUsername } = require("./tech-items-middleware.js");
 
-// GET - Get array of all tech items
+// GET - Get array of all tech items - WORKING!
 router.get("/", async (req, res, next) => {
     try {
-        const data = await techItems.find();
+        const data = await TechItems.find();
 
         // dev-prod Working!
         return res.status(200).json(data);
@@ -16,10 +16,10 @@ router.get("/", async (req, res, next) => {
     }
 });
 
-// GET - Get tech item by ID
+// GET - Get tech item by ID - WORKING!
 router.get("/:id", validateItemId, async (req, res, next) => {
     try {
-        const data = await techItems.findBy({ tech_items_id: req.params.id });
+        const data = await TechItems.findBy({ tech_items_id: req.params.id });
 
         // dev-prod Working!
         return res.status(200).json(data);
@@ -28,10 +28,10 @@ router.get("/:id", validateItemId, async (req, res, next) => {
     }
 });
 
-// POST - Add a tech item
+// POST - Add a tech item - WORKING!
 router.post("/", validateItem, validateOwnerUsername, async (req, res, next) => {
     try {
-        const data = await techItems.add(req.body);
+        const data = await TechItems.add(req.body);
 
         // dev-prod Working!
         return res.status(201).json(data);
@@ -41,23 +41,23 @@ router.post("/", validateItem, validateOwnerUsername, async (req, res, next) => 
 });
 
 // PUT - Update a tech item by ID
-router.put("/:id", validateItemId, validateItem, async (req, res, next) => {
+router.put("/:id", validateItemId, validateItem, validateOwnerUsername, async (req, res, next) => {
     try {
-        const data = await techItems.update(req.body, req.params.id);
+        const data = await TechItems.update(req.body, req.params.id);
 
+        // dev Working!
         return res.status(200).json(data);
     } catch(error) {
         next(error);
     }
 });
 
-
 // DELETE - Delete a tech item by ID
 // eslint-disable-next-line no-unused-vars
 router.delete("/:id", validateItemId, async (req, res, next) => {
     const itemId = req.params.id;
 
-    techItems.remove(itemId);
+    TechItems.remove(itemId);
 
     return res.status(200).json(`The tech item with ID: ${itemId} was removed.`);
 });
