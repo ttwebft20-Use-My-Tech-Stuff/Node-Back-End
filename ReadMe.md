@@ -38,7 +38,7 @@
         - Example: http://ttwebft20-use-my-tech-stuff.herokuapp.com/api/users
 
     * **[GET] [FindUserById]** - Find a registered user by assigned user ID </br>
-        - Endpoint: **/users/:users_id**
+        - Endpoint: **/users/:id**
         - Example: http://ttwebft20-use-my-tech-stuff.herokuapp.com/api/users/1
 
 ## [Tech Items - Find]
@@ -66,8 +66,6 @@
         "rented" - boolean, determines if available or rented, not required </br>
         "price" - integer, REQUIRED </br>
         "owner_username" - string, REQUIRED </br>
-
----- TESTING BELOW - DO NOT USE YET! ----
 
 ## [Tech Items - Update]
 - Token required to update tech item by ID

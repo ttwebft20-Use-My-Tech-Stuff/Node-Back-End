@@ -14,6 +14,10 @@ exports.up = function(knex) {
             .references("tech_items_id")
             .inTable("tech_items")
             .onDelete("CASCADE");
+        table.timestamp('created_at')
+            .defaultTo(knex.fn.now());
+        table.timestamp('updated_at')
+            .defaultTo(knex.fn.now());
     });
 };
 
