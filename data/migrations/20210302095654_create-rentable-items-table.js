@@ -1,7 +1,7 @@
 
 exports.up = function(knex) {
-    return knex.schema.createTable("rentable_items", table => {
-        table.increments("rentable_items_id");
+    return knex.schema.createTable("tech_items", table => {
+        table.increments("tech_items_id");
         table.string("item_name", 128)
             .notNullable();
         table.string("category")
@@ -17,5 +17,5 @@ exports.up = function(knex) {
 };
 
 exports.down = function(knex) {
-    return knex.schema.dropTableIfExists("rentable_items");
+    return knex.schema.dropTableIfExists("tech_items");
 };
