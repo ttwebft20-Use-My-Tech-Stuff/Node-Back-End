@@ -59,6 +59,7 @@ router.delete("/:id", validateItemId, async (req, res, next) => {
 
     TechItems.remove(itemId);
 
+    // dev Working!
     return res.status(200).json(`The tech item with ID: ${itemId} was removed.`);
 });
 

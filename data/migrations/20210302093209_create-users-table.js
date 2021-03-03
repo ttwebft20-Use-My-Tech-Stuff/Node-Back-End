@@ -4,20 +4,25 @@ exports.up = function(knex) {
         table.increments("users_id");
         table.string("username", 15)
             .notNullable()
-            .unique();
+            .unique()
+            .index();
         table.string("first_name", 30)
             .notNullable();
         table.string("last_name", 40)
             .notNullable();
-        table.string("email", 128)
+        table.string("email", 255)
             .notNullable()
             .unique();
-        table.integer("zipcode", 5)
+        table.string("zipcode", 5)
             .notNullable();
-        table.string("password")
+        table.string("password", 255)
             .notNullable();
         table.string("role", 6)
             .notNullable();
+        table.timestamp('created_at')
+            .defaultTo(knex.fn.now());
+        table.timestamp('updated_at')
+            .defaultTo(knex.fn.now());
     });
 };
 
