@@ -14,7 +14,7 @@ exports.up = function(knex) {
             .notNullable();
         table.string("owner_username")
             .notNullable();
-    })
+    });
 };
 
 exports.down = function(knex) {

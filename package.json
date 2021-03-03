@@ -6,14 +6,15 @@
   "scripts": {
     "start": "node index.js",
     "server": "nodemon index.js",
-    "latest": "knex migrate:latest",
+    "migrate": "knex migrate:latest",
     "rollback": "knex migrate:rollback",
     "seed": "knex seed:run",
     "migrateh": "heroku run knex migrate:latest -a ttwebft20-use-my-tech-stuff",
     "rollbackh": "heroku run knex migrate:rollback -a ttwebft20-use-my-tech-stuff",
     "seedh": "heroku run knex seed:run -a ttwebft20-use-my-tech-stuff",
     "databaseh": "heroku pg:psql -a ttwebft20-use-my-tech-stuff",
-    "test": "cross-env NODE_ENV=testing jest --watchAll --verbose --runInBand"
+    "test": "cross-env NODE_ENV=testing jest --watchAll --verbose --runInBand",
+    "deploy": "git push heroku main"
   },
   "repository": {
     "type": "git",
