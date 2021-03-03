@@ -27,14 +27,15 @@ async function validateItemId(req, res, next) {
 }
 
 function validateItem(req, res, next) {
-    const { item_name, category, description, rented, price, owner_username } = req.body;
+    const { item_name, category, description, price, owner_username } = req.body;
 
     if (item_name && category && description
-        && rented && price && owner_username) {
+        && price && owner_username) {
         next();
     } else {
+        // dev Working!
         res.status(400).json({
-            message: "Missing: item_name, category, description, rented, price, and owner_username."
+            message: "Missing: item_name, category, description, price, and owner_username."
         });
     }
 }
@@ -48,10 +49,12 @@ async function validateOwnerUsername(req, res, next) {
             if (owner.role === "owner") {
                 next();
             } else {
-                res.status(400).json("This user is not registered as an owner.");
+                // dev Working!
+                res.status(400).json("This user is not registered as an owner and cannot add a rentable item. Please use an account registered as an owner.");
             }
         } else {
             res.status(400).json({
+                // dev Working!
                 message: `Owner with username ${owner_username} could not be found.`
             });
         }
