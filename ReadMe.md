@@ -4,67 +4,67 @@
 - This url will be the beginning of all endpoints. Add the following endpoints below to the base URL.
 
 ## [Register]
-- No token is required when registering.
+- No token is required when registering
 - Example: http://ttwebft20-use-my-tech-stuff.herokuapp.com/api/auth/register
 
     * **[POST] [Register]** - Register a new user </br>
         - Endpoint: **/auth/register**
 
-        **Fields Required:** </br>
-        "username" - string, unique (MUST not match any other registered username) </br>
-        "first_name" - string </br>
-        "last_name" - string </br>
-        "email" - string </br>
-        "zipcode" - string </br>
-        "password" - string </br>
-        "role" - string, either MUST be "owner" or "renter" </br>
+        **Fields:** </br>
+        "username" - string, unique (MUST not match any other registered username), REQUIRED </br>
+        "first_name" - string, REQUIRED </br>
+        "last_name" - string, REQUIRED </br>
+        "email" - string, unique (MUST not match any other registered email), REQUIRED </br>
+        "zipcode" - string, REQUIRED </br>
+        "password" - string, REQUIRED </br>
+        "role" - string, MUST be "owner" or "renter", REQUIRED </br>
 
 ## [Login]
-- Token required for login.
+- Token required for login
 - Example: http://ttwebft20-use-my-tech-stuff.herokuapp.com/api/auth/login
 
     * **[POST] [Login]** - Login an already registered user to receive a token </br>
         - Endpoint: **/auth/login**
 
-        **Fields Required:** </br>
-        "username" - string, MUST match a registered username </br>
-        "password" - string, MUST match a registered password with registered username </br>
+        **Fields:** </br>
+        "username" - string, MUST match a registered username, REQUIRED </br>
+        "password" - string, MUST match a registered password with registered username, REQUIRED </br>
 
 ## [Users]
-- Token required for seeing users.
+- Token required for seeing users
 
     * **[GET] [FindAllUsers]** - Finds all users (owners and renters) </br>
         - Endpoint: **/users**
         - Example: http://ttwebft20-use-my-tech-stuff.herokuapp.com/api/users
 
-    * **[GET] [FindUserById]** - Find a registered user by user id </br>
+    * **[GET] [FindUserById]** - Find a registered user by assigned user id </br>
         - Endpoint: **/users/:users_id**
         - Example: http://ttwebft20-use-my-tech-stuff.herokuapp.com/api/users/1
 
 -----TESTING - DO NOT USE YET------
 
-## [Rentable Items - Find]
-- Token required to view rentable items.
+## [Tech Items - Find]
+- Token required to view tech items
 
-    * **[GET] [FindAllRentableItems]** - Find all rentable items. </br>
-        - Endpoint: **/rentable_items**
-        - Example: http://ttwebft20-use-my-tech-stuff.herokuapp.com/api/rentable_items
+    * **[GET] [FindAllTechItems]** - Find all tech items </br>
+        - Endpoint: **/tech_items**
+        - Example: http://ttwebft20-use-my-tech-stuff.herokuapp.com/api/tech_items
     
-    * **[GET] [FindItemById]** - Find rentable item by ID. </br>
-        - Endpoint: **/rentable_items/:id**
-        - Example: http://ttwebft20-use-my-tech-stuff.herokuapp.com/api/rentable_items/1
+    * **[GET] [FindTechItemById]** - Find tech item by assigned ID </br>
+        - Endpoint: **/tech_items/:id**
+        - Example: http://ttwebft20-use-my-tech-stuff.herokuapp.com/api/tech_items/1
 
-## [Rentable Items - Add]
-- Token required to add rentable items.
+## [Tech Items - Add]
+- Token required to add tech items
     
-    * **[POST] [AddNewItem]** - Add new rentable item. </br>
-        - Endpoint: **/rentable_items**
-        - Example: http://ttwebft20-use-my-tech-stuff.herokuapp.com/api/rentable_items
+    * **[POST] [AddNewItem]** - Add a new tech item </br>
+        - Endpoint: **/tech_items**
+        - Example: http://ttwebft20-use-my-tech-stuff.herokuapp.com/api/tech_items
 
-        **Fields Required:** </br>
-        "item_name" - string, up to 128 characters
-        "category" - string
-        "description" - string, up to 500 characters
-        "rented" - boolean, determines if available or rented
-        "price" - integer
-        "owner_username" - string
+        **Fields:** </br>
+        "item_name" - string, up to 128 characters, REQUIRED
+        "category" - string, REQUIRED
+        "description" - string, up to 500 characters, REQUIRED
+        "rented" - boolean, determines if available or rented, not required
+        "price" - integer, REQUIRED
+        "owner_username" - string, REQUIRED

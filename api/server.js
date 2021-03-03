@@ -11,11 +11,11 @@ server.use(express.json());
 // Routers
 const authRouter = require("./auth/auth-router.js");
 const usersRouter = require("./users/users-router.js");
-const rentableItemsRouter = require("./rentable-items/rentable-items-router.js");
+const techItemsRouter = require("./tech-items/tech-items-router.js");
 
 server.use("/api/auth", authRouter);
 server.use("/api/users", usersRouter);
-server.use("/api/rentable_items", rentableItemsRouter);
+server.use("/api/tech_items", techItemsRouter);
 
 server.get("/", (req, res) => {
     res.json({
