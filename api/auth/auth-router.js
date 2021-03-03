@@ -51,19 +51,21 @@ router.post("/login", async (req, res, next) => {
             if (user && bcryptjs.compareSync(password, user.password)) {
                 const token = makeToken(user);
 
-                // dev working!
+                // dev-prod Working!
                 return res.status(201).json({
                     message: `Welcome, ${username}`,
                     token,
                     user
                 });
             } else {
+                //  dev-prod Working!
                 res.status(400).json("Invalid username or password.");
             }
         } catch(error) {
             next(error);
         }
     } else {
+        // dev-prod Working!
         res.status(400).json("Username and password required.");
     }
 });

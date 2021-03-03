@@ -38,7 +38,7 @@
         - Example: http://ttwebft20-use-my-tech-stuff.herokuapp.com/api/users
 
     * **[GET] [FindUserById]** - Find a registered user by user id </br>
-        - Endpoint: **/users/:id**
+        - Endpoint: **/users/:users_id**
         - Example: http://ttwebft20-use-my-tech-stuff.herokuapp.com/api/users/1
 
 -----TESTING - DO NOT USE YET------
