@@ -16,6 +16,7 @@ async function validateItemId(req, res, next) {
         if (validateIdMatch) {
             next();
         } else {
+            // dev-prod Working!
             res.status(400).json({
                 message: `The rentable item with ID: ${id} could not be found.`
             });
