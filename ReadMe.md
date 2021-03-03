@@ -8,7 +8,7 @@
 - Example: http://ttwebft20-use-my-tech-stuff.herokuapp.com/api/auth/register
 
     * **[POST] [Register]** - Register a new user </br>
-        Endpoint: **/auth/register**
+        - Endpoint: **/auth/register**
 
         **Fields Required:** </br>
         "username" - string, unique (MUST not match any other registered username) </br>
@@ -17,14 +17,14 @@
         "email" - string </br>
         "zipcode" - string </br>
         "password" - string </br>
-        "role" - string, either MUST be "owner" or "renter"
+        "role" - string, either MUST be "owner" or "renter" </br>
 
 ## [Login]
 - Token required for login.
 - Example: http://ttwebft20-use-my-tech-stuff.herokuapp.com/api/auth/login
 
     * **[POST] [Login]** - Login an already registered user to receive a token </br>
-        Endpoint: **/auth/login**
+        - Endpoint: **/auth/login**
 
         **Fields Required:** </br>
         "username" - string, MUST match a registered username </br>
@@ -32,22 +32,24 @@
 
 ## [Users]
 - Token required for seeing users.
-- Example: http://ttwebft20-use-my-tech-stuff.herokuapp.com/api/users
 
     * **[GET] [FindAllUsers]** - Finds all users (owners and renters) </br>
-        Endpoint: **/users**
+        - Endpoint: **/users**
+        - Example: http://ttwebft20-use-my-tech-stuff.herokuapp.com/api/users
 
     * **[GET] [FindUserById]** - Find a registered user by user id </br>
-        Endpoint: **/users/:id**
+        - Endpoint: **/users/:id**
+        - Example: http://ttwebft20-use-my-tech-stuff.herokuapp.com/api/users/1
 
 -----TESTING - DO NOT USE YET------
 
 ## [Rentable Items]
 - Token required to view rentable items.
-- Example: http://ttwebft20-use-my-tech-stuff.herokuapp.com/api/rentable_items
 
-    * **[GET] [FindAllRentableItems]** - Find all rentable items.
-        Endpoint: **/rentable_items**
+    * **[GET] [FindAllRentableItems]** - Find all rentable items. </br>
+        - Endpoint: **/rentable_items**
+        - Example: http://ttwebft20-use-my-tech-stuff.herokuapp.com/api/rentable_items
     
-    * **[GET] [FindItemById]** - Find rentable item by ID.
-        Endpoint: **/rentable_items/:id**
+    * **[GET] [FindItemById]** - Find rentable item by ID. </br>
+        - Endpoint: **/rentable_items/:id**
+        - Example: http://ttwebft20-use-my-tech-stuff.herokuapp.com/api/rentable_items/1

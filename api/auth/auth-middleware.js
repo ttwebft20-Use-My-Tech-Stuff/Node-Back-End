@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken");
 // eslint-disable-next-line no-undef
-const jwtSecret = process.env.JWT_SECRET;
+const jwtSecret = process.env.JWT_SECRET || "notallowed";
 
 require("dotenv").config();
 
