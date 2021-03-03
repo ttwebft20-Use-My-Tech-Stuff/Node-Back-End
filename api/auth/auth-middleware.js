@@ -30,7 +30,7 @@ function isValidLogin(user) {
 
 function makeToken(user) {
     const payload = {
-        subject: user.user_id,
+        subject: user.users_id,
         username: user.username,
         role: user.role
     };
