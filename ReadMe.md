@@ -37,11 +37,9 @@
         - Endpoint: **/users**
         - Example: http://ttwebft20-use-my-tech-stuff.herokuapp.com/api/users
 
-    * **[GET] [FindUserById]** - Find a registered user by assigned user id </br>
+    * **[GET] [FindUserById]** - Find a registered user by assigned user ID </br>
         - Endpoint: **/users/:users_id**
         - Example: http://ttwebft20-use-my-tech-stuff.herokuapp.com/api/users/1
-
------TESTING - DO NOT USE YET------
 
 ## [Tech Items - Find]
 - Token required to view tech items
@@ -56,15 +54,39 @@
 
 ## [Tech Items - Add]
 - Token required to add tech items
+- Example: http://ttwebft20-use-my-tech-stuff.herokuapp.com/api/tech_items
     
-    * **[POST] [AddNewItem]** - Add a new tech item </br>
+    * **[POST] [AddNewTechItem]** - Add a new tech item </br>
         - Endpoint: **/tech_items**
-        - Example: http://ttwebft20-use-my-tech-stuff.herokuapp.com/api/tech_items
 
         **Fields:** </br>
-        "item_name" - string, up to 128 characters, REQUIRED
-        "category" - string, REQUIRED
-        "description" - string, up to 500 characters, REQUIRED
-        "rented" - boolean, determines if available or rented, not required
-        "price" - integer, REQUIRED
-        "owner_username" - string, REQUIRED
+        "item_name" - string, up to 128 characters, REQUIRED </br>
+        "category" - string, REQUIRED </br>
+        "description" - string, up to 500 characters, REQUIRED </br>
+        "rented" - boolean, determines if available or rented, not required </br>
+        "price" - integer, REQUIRED </br>
+        "owner_username" - string, REQUIRED </br>
+
+---- TESTING BELOW - DO NOT USE YET! ----
+
+## [Tech Items - Update]
+- Token required to update tech item by ID
+- Example: http://ttwebft20-use-my-tech-stuff.herokuapp.com/api/tech_items/1
+
+    * **[PUT] [UpdateTechItem]** - Edit a registered tech item </br>
+        - Endpoint: **/tech_items/:id**
+
+        **Fields:** </br>
+        "item_name" - string, up to 128 characters, REQUIRED </br>
+        "category" - string, REQUIRED </br>
+        "description" - string, up to 500 characters, REQUIRED </br>
+        "rented" - boolean, determines if available or rented, not required </br>
+        "price" - integer, REQUIRED </br>
+        "owner_username" - string, REQUIRED </br>
+
+## [Tech Items - Delete]
+- Token required to remove tech item by ID
+- Example: http://ttwebft20-use-my-tech-stuff.herokuapp.com/api/tech_items/1
+
+    * **[DELETE] [DeleteTechItem]** - Delete a registered tech item </br>
+        - Endpoint: **/tech_items/:id**
