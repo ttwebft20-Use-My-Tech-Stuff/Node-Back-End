@@ -6,7 +6,7 @@ const { isValidRegister, isValidLogin, makeToken } = require("./auth-middleware.
 const Users = require("../users/users-model.js");
 
 
-// POST - Register new user
+// POST - Register new user - WORKS!
 router.post("/register", async (req, res, next) => {
     const credentials = req.body;
 
@@ -20,18 +20,21 @@ router.post("/register", async (req, res, next) => {
 
             if(!user) {
                 try {
+                    //dev-prod Working!
                     const data = await Users.add(credentials);
                     return res.status(201).json(data);
                 } catch(error) {
                     next(error);
                 }
             } else {
+                // dev-prod Working!
                 res.status(400).json("Username already taken.");
             }
         } catch(error) {
             next(error);
         }
     } else {
+        // dev-prod Working!
         res.status(400).json("Username, first_name, last_name, email, zipcode, password, and role are required.");
     }
 });
@@ -48,6 +51,7 @@ router.post("/login", async (req, res, next) => {
             if (user && bcryptjs.compareSync(password, user.password)) {
                 const token = makeToken(user);
 
+                // dev working!
                 return res.status(201).json({
                     message: `Welcome, ${username}`,
                     token,
