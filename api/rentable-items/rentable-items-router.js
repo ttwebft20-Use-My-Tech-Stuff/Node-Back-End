@@ -9,6 +9,7 @@ router.get("/", async (req, res, next) => {
     try {
         const data = await RentableItems.find();
 
+        // dev-prod Working!
         return res.status(200).json(data);
     } catch(error) {
         next(error);
@@ -20,6 +21,7 @@ router.get("/:id", validateItemId, async (req, res, next) => {
     try {
         const data = await RentableItems.findBy({ rentable_items_id: req.params.id });
 
+        // dev-prod Working!
         return res.status(200).json(data);
     } catch(error) {
         next(error);

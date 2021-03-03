@@ -43,7 +43,7 @@
 
 -----TESTING - DO NOT USE YET------
 
-## [Rentable Items]
+## [Rentable Items - Find]
 - Token required to view rentable items.
 
     * **[GET] [FindAllRentableItems]** - Find all rentable items. </br>
@@ -53,3 +53,18 @@
     * **[GET] [FindItemById]** - Find rentable item by ID. </br>
         - Endpoint: **/rentable_items/:id**
         - Example: http://ttwebft20-use-my-tech-stuff.herokuapp.com/api/rentable_items/1
+
+## [Rentable Items - Add]
+- Token required to add rentable items.
+    
+    * **[POST] [AddNewItem]** - Add new rentable item. </br>
+        - Endpoint: **/rentable_items**
+        - Example: http://ttwebft20-use-my-tech-stuff.herokuapp.com/api/rentable_items
+
+        **Fields Required:** </br>
+        "item_name" - string, up to 128 characters
+        "category" - string
+        "description" - string, up to 500 characters
+        "rented" - boolean, determines if available or rented
+        "price" - integer
+        "owner_username" - string
