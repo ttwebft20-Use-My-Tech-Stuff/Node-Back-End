@@ -9,35 +9,35 @@ module.exports = {
 };
 
 function find() {
-    return db("tech_items")
-        .orderBy("tech_items_id");
+    return db("tech_item")
+        .orderBy("id");
 }
 
 function findBy(filter) {
-    return db("tech_items")
+    return db("tech_item")
         .where(filter)
         .first();
 }
 
 async function add(body) {
-    const [id] = await db("tech_items")
-        .insert(body, "tech_items_id");
-    return db("tech_items")
-        .where("tech_items_id", id)
+    const [id] = await db("tech_item")
+        .insert(body, "id");
+    return db("tech_item")
+        .where("id", id)
         .first();
 }
 
 async function update(changes, id) {
-    await db("tech_items")
-        .where("tech_items_id", id)
+    await db("tech_item")
+        .where("id", id)
         .update(changes);
-    return db("tech_items", id)
-        .where("tech_items_id", id)
+    return db("tech_item", id)
+        .where("id", id)
         .first();
 }
 
 async function remove(id) {
-    return db("tech_items")
-        .where({ tech_items_id: id })
+    return db("tech_item")
+        .where({ id: id })
         .del();
 }

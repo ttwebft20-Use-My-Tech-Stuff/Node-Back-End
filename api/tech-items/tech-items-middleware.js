@@ -11,7 +11,7 @@ async function validateItemId(req, res, next) {
     const { id } = req.params;
 
     try {
-        const validateIdMatch = await techItems.findBy({ tech_items_id: id });
+        const validateIdMatch = await techItems.findBy({ id: id });
 
         if (validateIdMatch) {
             next();

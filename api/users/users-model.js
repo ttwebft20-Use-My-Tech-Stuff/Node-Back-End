@@ -7,20 +7,20 @@ module.exports = {
 };
 
 function find() {
-    return db("users")
-    .orderBy("users_id");
+    return db("user")
+    .orderBy("id");
 }
 
 function findBy(filter) {
-    return db("users")
+    return db("user")
     .where(filter)
     .first();
 }
 
 async function add(user) {
-    const [id] = await db("users")
-        .insert(user, "users_id");
-    return db("users")
-        .where("users_id", id)
+    const [id] = await db("user")
+        .insert(user, "id");
+    return db("user")
+        .where("id", id)
         .first();
 }

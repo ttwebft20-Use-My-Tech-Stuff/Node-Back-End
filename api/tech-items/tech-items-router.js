@@ -54,7 +54,7 @@ router.put("/:id", validateItemId, validateItem, validateOwnerUsername, async (r
 
 // DELETE - Delete a tech item by ID
 // eslint-disable-next-line no-unused-vars
-router.delete("/:id", validateItemId, async (req, res, next) => {
+router.delete("/:id", validateItemId, validateOwnerUsername, async (req, res, next) => {
     const itemId = req.params.id;
 
     TechItems.remove(itemId);

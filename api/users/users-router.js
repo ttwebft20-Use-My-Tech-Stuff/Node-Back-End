@@ -14,11 +14,11 @@ router.get("/", async (req, res, next) => {
 });
 
 // GET - Get user by ID (owners and renters)
-router.get("/:users_id", async (req, res, next) => {
-    const { users_id } = req.params;
+router.get("/:id", async (req, res, next) => {
+    const { id } = req.params;
 
     try {
-        const data = await Users.findBy({ users_id });
+        const data = await Users.findBy({ id });
 
         if(data) {
             // dev-prod Works!
@@ -26,7 +26,7 @@ router.get("/:users_id", async (req, res, next) => {
         } else {
             // dev-prod Works!
         res.status(400).json({
-            message: `The user with ID: ${users_id} could not be found`
+            message: `The user with ID: ${id} could not be found`
         });
         }
     } catch(error) {
