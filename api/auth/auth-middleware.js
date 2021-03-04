@@ -16,6 +16,7 @@ function isValidRegister(user) {
         && user.first_name
         && user.last_name
         && user.email
+        && user.zipcode
         && user.password
         && user.role
     );
