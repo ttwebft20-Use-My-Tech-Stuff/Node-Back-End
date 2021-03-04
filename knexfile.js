@@ -1,5 +1,5 @@
+require('dotenv').config();
 const pg = require('pg');
-require("dotenv").config();
 
 // eslint-disable-next-line no-undef
 if (process.env.DATABASE_URL) {

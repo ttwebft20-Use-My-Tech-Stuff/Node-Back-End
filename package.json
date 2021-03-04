@@ -1,8 +1,6 @@
 {
   "name": "use-my-tech-stuff",
   "version": "1.0.0",
-  "description": "use-my-tech-stuff-node-back-end",
-  "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "server": "nodemon index.js",
@@ -11,8 +9,8 @@
     "seed": "knex seed:run",
     "migrateh": "heroku run knex migrate:latest -a ttwebft20-use-my-tech-stuff",
     "rollbackh": "heroku run knex migrate:rollback -a ttwebft20-use-my-tech-stuff",
-    "seedh": "heroku run knex seed:run -a ttwebft20-use-my-tech-stuff",
     "databaseh": "heroku pg:psql -a ttwebft20-use-my-tech-stuff",
+    "seedh": "heroku run knex seed:run -a ttwebft20-use-my-tech-stuff",
     "test": "cross-env NODE_ENV=testing jest --watchAll --verbose --runInBand",
     "deploy": "git push heroku main"
   },
@@ -20,11 +18,11 @@
     "type": "git",
     "url": "git+https://github.com/ttwebft20-Use-My-Tech-Stuff/Node-Back-End.git"
   },
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ttwebft20-Use-My-Tech-Stuff/Node-Back-End/issues"
+  "engines": {
+    "node": "14.15.4",
+    "npm": "6.14.11"
   },
-  "homepage": "https://github.com/ttwebft20-Use-My-Tech-Stuff/Node-Back-End#readme",
+  "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
