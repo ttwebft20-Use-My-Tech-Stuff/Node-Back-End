@@ -1,11 +1,11 @@
 # Node Back-End - Build Week - tt_wbft_20 - Jennifer Kramer
 
-**[Endpoints]** Base URL: http://ttwebft20-use-my-tech-stuff.herokuapp.com/api
+**[Endpoints]** Base URL: https://ttwebft20-use-my-tech-stuff.herokuapp.com/api
 - This url will be the beginning of all endpoints. Add the following endpoints below to the base URL.
 
 ## [Register]
 - No token is required when registering
-- Example: http://ttwebft20-use-my-tech-stuff.herokuapp.com/api/auth/register
+- Example: https://ttwebft20-use-my-tech-stuff.herokuapp.com/api/auth/register
 
     * **[POST] [Register]** - Register a new user </br>
         - Endpoint: **/auth/register**
@@ -25,7 +25,7 @@
 
 ## [Login]
 - Token required for login
-- Example: http://ttwebft20-use-my-tech-stuff.herokuapp.com/api/auth/login
+- Example: https://ttwebft20-use-my-tech-stuff.herokuapp.com/api/auth/login
 
     * **[POST] [Login]** - Login an already registered user to receive a token </br>
         - Endpoint: **/auth/login**
@@ -39,26 +39,26 @@
 
     * **[GET] [FindAllUsers]** - Finds all users (owners and renters) </br>
         - Endpoint: **/users**
-        - Example: http://ttwebft20-use-my-tech-stuff.herokuapp.com/api/users
+        - Example: https://ttwebft20-use-my-tech-stuff.herokuapp.com/api/users
 
     * **[GET] [FindUserById]** - Find a registered user by assigned user ID </br>
         - Endpoint: **/users/:id**
-        - Example: http://ttwebft20-use-my-tech-stuff.herokuapp.com/api/users/1
+        - Example: https://ttwebft20-use-my-tech-stuff.herokuapp.com/api/users/1
 
 ## [Tech Items - Find]
 - Token required to view tech items
 
     * **[GET] [FindAllTechItems]** - Find all tech items </br>
         - Endpoint: **/tech_items**
-        - Example: http://ttwebft20-use-my-tech-stuff.herokuapp.com/api/tech_items
+        - Example: https://ttwebft20-use-my-tech-stuff.herokuapp.com/api/tech_items
     
     * **[GET] [FindTechItemById]** - Find tech item by assigned ID </br>
         - Endpoint: **/tech_items/:id**
-        - Example: http://ttwebft20-use-my-tech-stuff.herokuapp.com/api/tech_items/1
+        - Example: https://ttwebft20-use-my-tech-stuff.herokuapp.com/api/tech_items/1
 
 ## [Tech Items - Add]
 - Token required to add tech items
-- Example: http://ttwebft20-use-my-tech-stuff.herokuapp.com/api/tech_items
+- Example: https://ttwebft20-use-my-tech-stuff.herokuapp.com/api/tech_items
     
     * **[POST] [AddNewTechItem]** - Add a new tech item </br>
         - Endpoint: **/tech_items**
@@ -78,7 +78,7 @@
 
 ## [Tech Items - Update]
 - Token required to update tech item by ID
-- Example: http://ttwebft20-use-my-tech-stuff.herokuapp.com/api/tech_items/1
+- Example: https://ttwebft20-use-my-tech-stuff.herokuapp.com/api/tech_items/1
 
     * **[PUT] [UpdateTechItem]** - Edit a registered tech item </br>
         - Endpoint: **/tech_items/:id**
@@ -98,7 +98,7 @@
 
 ## [Tech Items - Delete]
 - Token required to remove tech item by ID
-- Example: http://ttwebft20-use-my-tech-stuff.herokuapp.com/api/tech_items/1
+- Example: https://ttwebft20-use-my-tech-stuff.herokuapp.com/api/tech_items/1
 
     * **[DELETE] [DeleteTechItem]** - Delete a registered tech item </br>
         - Endpoint: **/tech_items/:id**
