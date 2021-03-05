@@ -1,4 +1,3 @@
-const request = require("supertest");
 const Users = require("./users-model.js");
 const db = require("../../data/db-config.js");
 
@@ -66,6 +65,7 @@ describe("Users-model.js testing", () => {
         });
     });
 
+    // Find User By ID
     describe("Users.findBy Function", () => {
         beforeEach(async () => {
             await db("user").insert(jennOwner);
