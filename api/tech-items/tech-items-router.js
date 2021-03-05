@@ -19,7 +19,7 @@ router.get("/", async (req, res, next) => {
 // GET - Get tech item by ID - WORKING!
 router.get("/:id", validateItemId, async (req, res, next) => {
     try {
-        const data = await TechItems.findBy({ tech_items_id: req.params.id });
+        const data = await TechItems.findBy({ id: req.params.id });
 
         // dev-prod Working!
         return res.status(200).json(data);
