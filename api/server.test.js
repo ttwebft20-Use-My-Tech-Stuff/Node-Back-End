@@ -1,6 +1,5 @@
 const request = require("supertest");
 const db = require("../data/db-config.js");
-const { report } = require("./server.js");
 const server = require("./server.js");
 
 let jennOwner = {
@@ -160,7 +159,7 @@ describe("Server Testing", () => {
                         let response;
 
                         response = await request(server)
-                            .get("/api/users/1").set("Authorization", token)
+                            .get("/api/users/1").set("Authorization", token);
                         expect(response.body).toMatchObject({
                             username: jennOwner.username
                         });
@@ -232,7 +231,15 @@ describe("Server Testing", () => {
                         });
                     });
 
-
+                    // Delete A Tech Item By ID
+                    describe("[DELETE] /api/tech_items/:id", () => {
+                        it("Responds with removal message", async () => {
+                            let response = await request(server)
+                                .delete("/api/tech_items/1")
+                                .set("Authorization", token);
+                            expect(response.body).toBe("The tech item with ID: 1 was removed.");
+                        });
+                    });
                 });
             });
         });

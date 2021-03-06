@@ -5,7 +5,6 @@ const Users = require("./users-model.js");
 // GET - Get all users (owners and renters)
 router.get("/", async (req, res, next) => {
     try {
-        // dev-prod Works!
         const data = await Users.find();
         return res.status(200).json(data);
     } catch (error) {
@@ -21,10 +20,8 @@ router.get("/:id", async (req, res, next) => {
         const data = await Users.findBy({ id });
 
         if(data) {
-            // dev-prod Works!
         return res.status(200).json(data);
         } else {
-            // dev-prod Works!
         res.status(400).json({
             message: `The user with ID: ${id} could not be found`
         });

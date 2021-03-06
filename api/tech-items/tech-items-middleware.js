@@ -16,7 +16,6 @@ async function validateItemId(req, res, next) {
         if (validateIdMatch) {
             next();
         } else {
-            // dev-prod Working!
             res.status(400).json({
                 message: `The tech item with ID: ${id} could not be found.`
             });
@@ -33,7 +32,6 @@ function validateItem(req, res, next) {
         && price && owner_username) {
         next();
     } else {
-        // dev-prod Working!
         res.status(400).json({
             message: "Missing: item_name, category, description, price, and owner_username."
         });
@@ -49,12 +47,10 @@ async function validateOwnerUsername(req, res, next) {
             if (owner.role === "owner") {
                 next();
             } else {
-                // dev-prod Working!
                 res.status(400).json("This user is not registered as an owner and cannot add a tech item. Please use an account registered as an owner.");
             }
         } else {
             res.status(400).json({
-                // dev-prod Working!
                 message: `Owner with username ${owner_username} could not be found.`
             });
         }
